@@ -2,9 +2,15 @@
 
 ;21. Definir una función para obtener la matriz triangular superior (incluyendo la diagonal principal) de una matriz cuadrada que está representada como una lista de listas.
 
+
+
 (defn replace_with_zero [n, row] (concat (repeat n 0) (drop n row) ))
 
+;Algoritmo no recursivo
+
 (defn triangle_matrix [mat] (map replace_with_zero (range) mat))
+
+;Algoritmo recursivo
 
 (defn tmr_aux [new_mat old_mat n_row] (
   if (< n_row 0) new_mat

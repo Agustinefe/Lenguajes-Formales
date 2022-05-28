@@ -2,7 +2,11 @@
 
 ;22. Definir una función para obtener la diagonal principal de una matriz cuadrada que está representada como una lista de listas.
 
+;Algoritmo no recursivo
+
 (defn traza [mat] (map nth mat (range)))
+
+;Algoritmo recursivo
 
 (defn tr_aux [traza mat n_row] (
   if (< n_row 0) traza
