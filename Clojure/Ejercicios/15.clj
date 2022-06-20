@@ -1,7 +1,9 @@
-(defn ultimo [l] (
-  if (list? (nth l (dec (count l))))
-    (ultimo (nth l (dec (count l))))
-    (nth l (dec (count l)))
-))
-
-(println (ultimo '((1 2 3) (4 5 6) (7 8 9))))
+(defn eliminarOcurrencias[l d]
+  (cond
+    (empty? l) l
+    (coll? (first l)) 
+    (cons (eliminarOcurrencias (first l) d) (eliminarOcurrencias (rest l) d))
+    (= d (first l)) (eliminarOcurrencias (rest l) d)
+    :else (cons (first l) (eliminarOcurrencias (rest l) d))
+  )
+)
